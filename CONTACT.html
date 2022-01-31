@@ -1,0 +1,92 @@
+<HTML>
+<head><title>CONTACT US </title>
+<script langauge="javaScript">
+function vld()
+{
+	if(order.fname.value=="")
+	{
+ 	   alert("You must Enter The First Name")
+ 	   order.fname.focus()
+	   
+ 	   return(false)
+	}
+	else
+		if(order.lname.value=="")
+		{
+ 		   alert("You must Enter The Last Name")
+		   order.lname.focus()
+ 		   return(false)
+		}
+    else
+		if(order.email.value=="")
+		{
+ 		   alert("You Must Enter Email address")
+		   order.email.focus()
+ 		   return(false)
+		}	
+	else
+		if(order.phone.value=="")
+		{
+ 		   alert("Please Enter Your Mobile Number")
+		   order.phone.focus()
+ 		   return(false)
+		}
+	else
+		if(order.phone.value.length <11 || order.phone.value.length >11)
+		{
+ 		   alert("Invalid Number")
+		   order.phone.focus()
+ 		   return(false)
+		}			
+	else
+		if(order.comment.value=="")
+		{
+ 		   alert("Cant submit without your comment")
+		   order.comment.focus()
+ 		   return(false)
+		}	
+		return true;
+}
+</script>
+</head>
+
+<body background="IMG/moimoi.jpeg" >
+<center>
+ <h3> Do you need a help, or have a question?</h3> 
+ <p>We're available seven days a week to lend a hand. Share a little information by filling below 
+ and we'll be in touch shortly.</p> 
+<table>
+    <tr>
+	  <td>
+	    <form action="THANKS.html"  name="order">
+	      <td>
+		   <fieldset>
+		     <legend align="center">Contact Us:</legend>
+			 First Name:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+			<input type="text" size="45%" name="fname" placeholder="FIRST NAME"><br><br>
+			 Last Name: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+		    <input type="text" size="45%" name="lname" placeholder="LAST NAME"><br><br>
+			 Email Address: &nbsp &nbsp &nbsp &nbsp
+		    <input type="email" size="45%" name="email" placeholder="example@gmail.com"><br><br>
+			 Phone Number: &nbsp &nbsp &nbsp &nbsp
+		    <input type="number" name="phone" maxlength="11" placeholder="+234*********"><br><br>
+	        <textarea cols="51%" rows="10" name="comment" placeholder="HOW CAN WE HELP"></textarea><br>
+			&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+			&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+            <input type="submit" value="Submit" onClick ="return vld()"/> 
+            <input type="reset" value="Reset"/> 
+			<fieldset>
+		</form> 
+   <table align="center">
+       <tr >
+	         <td align="left">Email us<td><td><td><td> <td><td> <td><td> 
+	         <td>GSM 
+	   </tr>
+	    <tr>
+	         <td>BJBRESTAURANT@GMAIL.COM<td><td><td><td> <td><td> <td><td> 
+	         <td>08030838197<br>
+			 
+	    </tr>
+   </table>
+</body>
+</html>

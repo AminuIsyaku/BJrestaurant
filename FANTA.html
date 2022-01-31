@@ -1,0 +1,49 @@
+<HTML>
+ <head>
+   <title>Masa</title>
+     <script>
+	    function sure(){
+        var localTime = new Date();
+		var dateString = localTime.toDateString();
+		var timeString = localTime.toLocaleTimeString();
+		var pPrice=399;
+       alert("ORDER SUMMARY:\n\tFoot Type: \tMASA\n\tOrder Date:\t"+dateString+"\n\tOrder Time:\t"+timeString+
+	         "\n\tPlate price:\t$"+pPrice+"\n\tQuantity: \t"+q+" plate\n\tTotal Price:\t$"+(q*p)
+			 +"\n\nClick OK to complete you order\n\n\n\n");
+        }
+        function calc() {
+            q = parseInt(document.getElementById('quantity').value);
+            p = parseInt(document.getElementById('price').innerText) || 399;
+            document.getElementById('total').value = q * p;
+        }
+        window.onload = calc;
+    </script> 
+ </head>
+
+<body background="IMG/go.jpg">
+<center>
+  <table border=3 bordercolor="77221d" width="60%" height="60%" >
+  <caption><font size="30"><font face="Castellar" COLOR="77221d"> MASA </font></caption>
+   <tr>
+        <td><img src="IMG/masa.jpeg" width="500"   border=1 bordercolor="77221d">
+		<td align="center"bgcolor="e2e2e2"><font color="#900">Description</font><br><font size=3 face="verdana">
+		    Enjoy or Hot Masa with the Spicy Miya
+		    It contain 10 piecies of masa per plate
+		    <font color="#900"><br>INGREDIENT</font><br>
+			Rice, Oil, Sugar and a pinch of salt.
+		    </font>
+			<form method="get">       
+        <p> Quantity: <input id="quantity" type="number" min="1" max="10" value="1" name="quantity" 
+            onchange="calc()"/> </p>
+
+        <p> 
+            Plate Price: $<span id="price">399</span> &nbsp;
+            Total: <b style="color: #900"> $<output id="total" for="quantity">0</output> </b>
+        </p>
+        <p> To place your order press this red button: </p>
+        <p align="center"><a href="form.html" onclick="sure()"><img src="IMG/BUY.gif" width="50%" height="15%"></a> </p>
+    </form>
+   </tr>
+  </table>	
+</body>
+</html>

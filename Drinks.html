@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head> <!-- boostrap -->
+  <link href="./bootstrap/css/bootstrap.css" rel="stylesheet"/>
+<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    padding: 10px;
+    background: rgb(209, 162, 98);
+}
+
+/* Header/Blog Title */
+.header {
+    padding: 0px;
+    text-align: center;
+    background: rgb(209, 162, 98);
+}
+
+.header h1 {
+    font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+    float: left;
+    width: 75%;
+    margin-left:14px;
+
+
+}
+
+/* Right column */
+.rightcolumn {
+    float: left;
+    width: 22%;
+    background-color: rgb(209, 162, 98);
+    padding-left: 20px;
+
+}
+
+/* Fake image */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+    background-color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+/*.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}*/
+
+/* Footer */
+.footer {
+    padding: 3px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+        width: 100%;
+        padding: 0;
+    }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+}
+
+
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+  .desc {
+      font-size: 12px;
+  }
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+
+</style>
+ 
+<script type="text/javascript">
+ 
+ function sure(){
+        var localTime = new Date();
+    var dateString = localTime.toDateString();
+    var timeString = localTime.toLocaleTimeString();
+    var pPrice=300;
+       alert("ORDER SUMMARY:\n\tFood Type: \t\n\tOrder Date:\t"+dateString+"\n\tOrder Time:\t"+timeString+
+           "\n\tFood price:\tN"+pPrice+"\n\tQuantity: \t"+q+" \n\tTotal Price:\tN"+(q*p)
+       +"\n\nClick OK to complete your order\n\n\n\n");
+        }
+   
+        function calc() {
+            q = parseInt(document.getElementById('quantity').value);
+            p = parseInt(document.getElementById('price').innerText) || 300;
+            document.getElementById('total').value = q * p;
+        }
+        window.onload = calc;
+    </script> 
+</script>
+</head>
+<body>
+  <div class="container-fluid-sm">
+        <div class="row">
+          <div class="col-md-3">
+        <div class="card"><img class="card-img-top" src="j1.jpg" height="200px">
+          <div class="card-body">
+            <div class="card-title">
+              <h4>MIXED ORANGE JUICE</h4>
+              <mark class="desc">The delicious fast drinks ever, juice..</mark>
+            </div>
+
+            <p> Quantity: <input id="quantity" type="number" min="1" max="10" value="1" name="quantity" 
+            onchange="calc()"/> </p>
+           
+           <h4 align="left" id="price">Product Price: N<span id="price">300</span> </h4>
+            
+
+              <h4 align="left" id="price">Total: <b style="color: #900"> N<output id="total" for="quantity">0</output> </b></h4>
+              <a href="FORM.html" onclick="sure()"> <button class="btn btn-danger sm" align="right">Buy Now</button></a>
+              
+          
+          </div>
+        </div>
+        </div>
+          <div class="col-md-3">
+        <div class="card"><img class="card-img-top" src="j2.jpg" height="200px">
+          <div class="card-body">
+            <div class="card-title">
+              <h4>Pupular Drinks</h4>
+              <mark class="desc">The delicious fast drinks ever, juice..</mark>
+            </div>
+
+            <p> Quantity: <input id="quantity" type="number" min="1" max="10" value="1" name="quantity" 
+            onchange="calc()"/> </p>
+           
+           <h4 align="left" id="price">Product Price: N<span id="price">300</span> </h4>
+            
+
+              <h4 align="left" id="price">Total: <b style="color: #900"> N<output id="total" for="quantity">0</output> </b></h4>
+              <a href="FORM.html" onclick="sure()"> <button class="btn btn-danger sm" align="right">Buy Now</button></a>
+              
+          
+          </div>
+        </div>
+        </div>
+             <div class="col-md-3">
+        <div class="card"><img class="card-img-top" src="j3.jpg" height="200px">
+          <div class="card-body">
+            <div class="card-title">
+              <h4>Popular Drinks</h4>
+              <mark class="desc">The delicious fast drinks ever, juice..</mark>
+            </div>
+
+            <p> Quantity: <input id="quantity" type="number" min="1" max="10" value="1" name="quantity" 
+            onchange="calc()"/> </p>
+           
+           <h4 align="left" id="price">Product Price: N<span id="price">300</span> </h4>
+            
+
+              <h4 align="left" id="price">Total: <b style="color: #900"> N<output id="total" for="quantity">0</output> </b></h4>
+              <a href="FORM.html" onclick="sure()"> <button class="btn btn-danger sm" align="right">Buy Now</button></a>
+              
+          
+          </div>
+        </div>
+        </div>
+      
+            <div class="col-md-3">
+        <div class="card"><img class="card-img-top" src="j4.jpg" height="200px">
+          <div class="card-body">
+            <div class="card-title">
+              <h4>Pupular Drinks</h4>
+              <mark class="desc">The delicious fast drinks ever, juice..</mark>
+            </div>
+
+            <p> Quantity: <input id="quantity" type="number" min="1" max="10" value="1" name="quantity" 
+            onchange="calc()"/> </p>
+           
+           <h4 align="left" id="price">Product Price: N<span id="price">300</span> </h4>
+            
+
+              <h4 align="left" id="price">Total: <b style="color: #900"> N<output id="total" for="quantity">0</output> </b></h4>
+              <a href="order.html" onclick="sure()"> <button class="btn btn-danger sm" align="right">Buy Now</button></a>
+              
+          
+          </div>
+        </div>
+        </div>
+
+<!-- SECOND ROW -->
+
+</div>
+</div>
+
+
+
+<div class="container-fluid-sm">
+        <div class="row">
+          <div class="col-md-3">
+        <div class="card"><img class="card-img-top" src="j5.jpg" height="200px">
+          <div class="card-body">
+            <div class="card-title">
+              <h4>Pupular Drinks</h4>
+              <mark class="desc">The delicious fast drinks ever, juice..</mark>
+            </div>
+
+            <p> Quantity: <input id="quantity" type="number" min="1" max="10" value="1" name="quantity" 
+            onchange="calc()"/> </p>
+           
+           <h4 align="left" id="price">Product Price: N<span id="price">300</span> </h4>
+            
+
+              <h4 align="left" id="price">Total: <b style="color: #900"> N<output id="total" for="quantity">0</output> </b></h4>
+              <a href="order.html" onclick="sure()"> <button class="btn btn-danger sm" align="right">Buy Now</button></a>
+              
+          
+          </div>
+        </div>
+        </div>
+          <div class="col-md-3">
+        <div class="card"><img class="card-img-top" src="j6.jpg" height="200px">
+          <div class="card-body">
+            <div class="card-title">
+              <h4>Pupular Drinks</h4>
+              <mark class="desc">The delicious fast drinks ever, juice..</mark>
+            </div>
+
+            <p> Quantity: <input id="quantity" type="number" min="1" max="10" value="1" name="quantity" 
+            onchange="calc()"/> </p>
+           
+           <h4 align="left" id="price">Product Price: $<span id="price">300</span> </h4>
+            
+
+              <h4 align="left" id="price">Total: <b style="color: #900"> $<output id="total" for="quantity">0</output> </b></h4>
+              <a href="order.html" onclick="sure()"> <button class="btn btn-danger sm" align="right">Buy Now</button></a>
+              <button class="btn btn-danger-sm" align="right">Add Ingredients</button>
+          
+          </div>
+        </div>
+        </div>
+            <div class="col-md-3">
+        <div class="card"><img class="card-img-top" src="j7.jpg" height="200px">
+          <div class="card-body">
+            <div class="card-title">
+              <h4>Pupular Drinks</h4>
+              <mark class="desc">The delicious fast drinks ever, juice..</mark>
+            </div>
+
+            <p> Quantity: <input id="quantity" type="number" min="1" max="10" value="1" name="quantity" 
+            onchange="calc()"/> </p>
+           
+           <h4 align="left" id="price">Product Price: $<span id="price">300</span> </h4>
+            
+
+              <h4 align="left" id="price">Total: <b style="color: #900"> $<output id="total" for="quantity">0</output> </b></h4>
+              <a href="order.html" onclick="sure()"> <button class="btn btn-danger sm" align="right">Buy Now</button></a>
+              <button class="btn btn-danger-sm" align="right">Add Ingredients</button>
+          
+          </div>
+        </div>
+        </div>
+      
+            <div class="col-md-3">
+        <div class="card"><img class="card-img-top" src="j8.jpg" height="200px">
+          <div class="card-body">
+            <div class="card-title">
+              <h4>Popular Drinks</h4>
+              <mark class="desc">The delicious fast drinks ever, juice..</mark>
+            </div>
+
+            <p> Quantity: <input id="quantity" type="number" min="1" max="10" value="1" name="quantity" 
+            onchange="calc()"/> </p>
+           
+           <h4 align="left" id="price">Product Price: $<span id="price">300</span> </h4>
+            
+
+              <h4 align="left" id="price">Total: <b style="color: #900"> $<output id="total" for="quantity">0</output> </b></h4>
+              <a href="order.html" onclick="sure()"> <button class="btn btn-danger sm" align="right">Buy Now</button></a>
+              <button class="btn btn-danger-sm" align="right">Add Ingredients</button>
+          
+          </div>
+        </div>
+        </div>
+
+<!-- SECOND ROW -->
+
+</div>
+</div>
+
+
+
+
+
+
+
+</div>
+</div>
+<div class="footer">
+  <div class="footer" id="footer">
+  Copyright ©2022 BJB Restaurant. All rights reserved.<br>
+Stay Connected: <a href="http://www.facebook.com" title="link to Facebook page"><img src="fb.png" width='20' height='20'></a>&nbsp;
+<a href="http://www.twitter.com" title="link to Twitter page"><img src="twt.png" width='20' height='20'></a>&nbsp; 
+<a href="http://www.google.com" title="link to Google page"><img src="g.png" width='20' height='20'></a>&nbsp; 
+<a href="http://www.instagram.com" title="link to Instagram page"><img src="in.jpg" width='20' height='20'></a> 
+<a href="http://www.youtube.com" title="link to Youtube page"><img src="yt.png" width='20' height='20'></a> 
+<br>The BJB Restaurant is Powered By:| AMINU | ISYAKU |
+</div>
+</div>
+
+ <div class="modal fade" id="sign">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+      </div>
+      <div class="modal-body">
+        <input type="text" name="">
+      </div>
+    </div>
+    <div class="modal-footer"></div>
+    
+  </div>
+ </div>
+
+    
+</body>
+</html>
+

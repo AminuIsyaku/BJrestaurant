@@ -1,0 +1,135 @@
+<html>
+<head><title>Order</title>
+
+<script langauge="javaScript">
+function vld()
+{
+    
+	if(order.fname.value=="")
+	{
+ 	   alert("You must Enter The First Name")
+         order.fname.focus()
+	   
+ 	   return(false)
+	}
+	else
+		if(order.lname.value=="")
+		{
+ 		   alert("You must Enter The Last Name")
+		   order.lname.focus()
+ 		   return(false)
+		}
+    else
+		if(order.email.value=="")
+		{
+ 		   alert("You Must Enter Email address")
+		   order.email.focus()
+ 		   return(false)
+		}	
+	else
+		if(order.phone.value=="")
+		{
+ 		   alert("Please Enter Your Mobile Number")
+		   order.phone.focus()
+ 		   return(false)
+		}
+	else
+		if(order.phone.value.length <11 || order.phone.value.length >11)
+		{
+ 		   alert("Invalid Number")
+		   order.phone.focus()
+ 		   return(false)
+		}	
+	else
+		if(order.address.value=="")
+		{
+ 		   alert("You Must Enter Your Address")
+		   order.address.focus()
+ 		   return(false)
+		}
+	else
+		if(order.state.value=="")
+		{
+ 		   alert("Select your state")
+		   order.state.focus()
+ 		   return(false)
+		}
+	else
+		if(order.cnumber.value=="")
+		{
+ 		   alert("The field cant be empty")
+		   order.cnumber.focus()
+ 		   return(false)
+		}
+    else
+		if(order.date.value=="")
+		{
+ 		   alert("The field cant be empty")
+		   order.date.focus()
+ 		   return(false)
+		}
+		return true;
+}
+</script>
+</head>
+<body background="hm.jpg">
+    <table width="45%" align="center">
+	  <tr>
+	    <td>
+	      <form action="Thanks.html"  name="order">
+	     <fieldset>
+	        <legend align="center">Billing Infomation:</legend>
+		      First Name:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+		      <input type="text" name="fname" size="45%" placeholder="First Name"><br><br>
+			  Last Name: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+		      <input type="text" name="lname" size="45%" placeholder="Last Name"><br><br>
+			  Email Address: &nbsp &nbsp &nbsp &nbsp
+		      <input type="email" name="email" size="45%" placeholder="example@gmail.com"><br><br>
+			  Phone Number: &nbsp &nbsp &nbsp &nbsp
+		      <input type="number" name="phone" size="45%" placeholder="+234********"><br><br>
+			  Home Address: &nbsp &nbsp &nbsp &nbsp 
+		      <input type="text" name="address" size="45%" placeholder="Address goes here"><br><br>
+					</select><br><br>
+		</tr>
+        <tr>		
+		</fieldset>
+		</table>
+		<table width="45%" align="center">
+	  <tr>
+	    <td>
+	      <form action="homepage.html" name="order">
+	     <fieldset>
+	        <legend align="center">Payment Infomation:</legend>
+			Crad Type: &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+		           <select name="card">
+			         <option>Master Card</option>
+					 <option>Visa Card</option>
+					 <option>PayPal</option>
+					</select><br><br>
+		      Card Number: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+		      <input name="cnumber" id="crd1" size="5" maxlength="4"
+	            onkeyup="if(this.value.length>=4) 
+	             this.form.crd2.focus();"/> 
+	          <input name="crd2" id="crd2" size="5" maxlength="4" 
+	            onkeyup="if(this.value.length>=4) 
+	             this.form.crd3.focus();"/> 
+	          <input name="crd3" id="crd3" size="5" maxlength="4" 
+	            onkeyup="if(this.value.length>=4) 
+	             this.form.crd4.focus();" /> 
+	          <input name="crd4" id="crd4" size="5" maxlength="4" 
+	            onkeyup="if(this.value.length>=4) 
+	             this.form.date.focus();" /> 
+	             <br><br>
+			  Expiration (DD/MM/YY): &nbsp &nbsp &nbsp &nbsp 
+		      <input type="date" id="date" name="date" size="45%" placeholder="dd/mm/yy"><br><br>
+			  <center>
+		      <input type="submit" value="Submit" onClick ="return vld()">&nbsp &nbsp &nbsp &nbsp
+			  <input type="reset" value="Reset"	>	 
+	    </tr>
+	     </fieldset>
+	  </form>
+	</table> 
+
+</body>
+
+</html>

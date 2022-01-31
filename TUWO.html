@@ -1,0 +1,49 @@
+<HTML>
+ <head>
+   <title>TUWO</title>
+     <script>
+	 function sure(){
+        var localTime = new Date();
+		var dateString = localTime.toDateString();
+		var timeString = localTime.toLocaleTimeString();
+		var pPrice=299;
+       alert("ORDER SUMMARY:\n\tFoot Type: \tTUWO\n\tOrder Date:\t"+dateString+"\n\tOrder Time:\t"+timeString+
+	         "\n\tPlate price:\tN"+pPrice+"\n\tQuantity: \t"+q+" plate\n\tTotal Price:\tN"+(q*p)
+			 +"\n\nClick OK to complete you order\n\n\n\n");
+        }
+	 
+        function calc() {
+            q = parseInt(document.getElementById('quantity').value);
+            p = parseInt(document.getElementById('price').innerText) || 299;
+            document.getElementById('total').value = q * p;
+        }
+        window.onload = calc;
+    </script> 
+ </head>
+
+<body background="IMG/go.jpg">
+<center>
+  <table border=3 bordercolor="77221d" width="60%" height="50%" >
+  <caption><font size="30"><font face="Castellar" COLOR="77221d"> TUWO</font></caption>
+   <tr>
+        <td><img src="IMG/towo.jpg" width="500"   border=1 bordercolor="77221d">
+		<td align="center"bgcolor="e2e2e2"><font color="#900">Description</font> <br><font face="verdana">
+		    Enjoy our Freshly cooked Tuwon Shinkafa and Okro Soup.<br>
+		    1 malmala and an ample amount of soup per plate.<br>
+		    <font color="#900">INGREDIENT</font><br>
+		    ShinkafanTuwo, Okro, Oil, Pepper, Salt, Meat.<br></font>
+			<form action="#" method="get">       
+        <p> Quantity: <input id="quantity" type="number" min="1" max="10" value="1" name="quantity" 
+            onchange="calc()"/> </p>
+
+        <p> 
+            Plate Price: N<span id="price">299</span> &nbsp;
+            Total: <b style="color: #900"> N<output id="total" for="quantity">0</output> </b>
+        </p>
+        <p> To place your order press this red button: </p>
+        <p align="center"><a href="form.html" onclick="sure()"><img src="IMG/BUY.gif" width="50%" height="15%"></a> </p>
+    </form>
+   </tr>
+  </table>	
+</body>
+</html>
